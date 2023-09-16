@@ -62,6 +62,16 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 10,
                     ),
                   ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    'Friday, 25 December 2020',
+                    style: TextStyle(
+                      fontFamily: 'UbuntuCondensed',
+                      fontSize: 18,
+                    ),
+                  ),
                 ],
               ),
             ),
