@@ -24,6 +24,3 @@ flutter:
   assets:
     - assets/img/
   uses-material-design: true
-
-  assets:
-    - assets/img/
