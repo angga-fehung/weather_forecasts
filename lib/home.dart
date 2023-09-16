@@ -10,11 +10,11 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const Align(
+            Align(
               alignment: Alignment.topCenter,
               child: Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: ListTile(
                       title: Text(
                         'Mumbai',
@@ -34,18 +34,24 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(
-                        Icons.map_outlined,
-                        size: 26,
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.map_outlined,
+                          size: 26,
+                        ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Icon(
-                        Icons.settings_outlined,
-                        size: 26,
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.settings_outlined,
+                          size: 26,
+                        ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                     ],
