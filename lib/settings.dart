@@ -90,6 +90,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                       onTap: () {},
+                      trailing: const Icon(Icons.check),
                     ),
                     ListTile(
                       title: const Text(
