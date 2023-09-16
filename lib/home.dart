@@ -72,6 +72,63 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        '22',
+                        style: TextStyle(
+                          fontFamily: 'UbuntuCondensed',
+                          fontSize: 96,
+                        ),
+                      ),
+                      Text(
+                        '℃',
+                        style: TextStyle(
+                          fontFamily: 'UbuntuCondensed',
+                          fontSize: 36,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.arrow_downward_sharp),
+                          Text(
+                            '16℃',
+                            style: TextStyle(
+                              fontFamily: 'UbuntuCondensed',
+                              fontSize: 18,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Icon(Icons.arrow_upward_sharp),
+                          Text(
+                            '26℃',
+                            style: TextStyle(
+                              fontFamily: 'UbuntuCondensed',
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
