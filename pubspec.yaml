@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -21,3 +22,6 @@ flutter:
       fonts:
         - asset: assets/fonts/UbuntuCondensed-Regular.ttf
   uses-material-design: true
+
+  assets:
+    - assets/img/

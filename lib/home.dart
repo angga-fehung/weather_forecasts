@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,11 +6,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            Align(
+            const Align(
               alignment: Alignment.topCenter,
               child: Row(
                 children: [
@@ -55,27 +56,27 @@ class HomeScreen extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'in sync',
                     style: TextStyle(
                       fontFamily: 'UbuntuCondensed',
                       fontSize: 10,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
-                  Text(
+                  const Text(
                     'Friday, 25 December 2020',
                     style: TextStyle(
                       fontFamily: 'UbuntuCondensed',
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
@@ -96,10 +97,10 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
@@ -115,7 +116,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 20,
                           ),
                           Icon(Icons.arrow_upward_sharp),
                           Text(
@@ -128,7 +129,63 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ],
-                  )
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                  ),
+                  Image.asset(
+                    'assets/img/drizzle.png',
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  const Text(
+                    'Light Drizzle',
+                    style:
+                        TextStyle(fontFamily: 'UbuntuCondensed', fontSize: 18),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: [
+                          Icon(CupertinoIcons.sunrise),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              '09:18 AM',
+                              style: TextStyle(
+                                fontFamily: 'UbuntuCondensed',
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Icon(CupertinoIcons.sunset),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              '06:32 PM',
+                              style: TextStyle(
+                                fontFamily: 'UbuntuCondensed',
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
