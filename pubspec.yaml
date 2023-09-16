@@ -20,4 +20,6 @@ flutter:
     - family: UbuntuCondensed
       fonts:
         - asset: assets/fonts/UbuntuCondensed-Regular.ttf
+  assets:
+    - assets/img/
   uses-material-design: true
