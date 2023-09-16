@@ -1,7 +1,7 @@
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_forecasts/location.dart';
+import 'package:weather_forecasts/settings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LocationScreen()),
+                                builder: (context) => const LocationScreen()),
                           );
                         },
                         child: const Icon(
@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SettingsScreen()),
+                                builder: (context) => const SettingsScreen()),
                           );
                         },
                         child: const Icon(
