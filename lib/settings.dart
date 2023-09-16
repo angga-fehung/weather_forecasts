@@ -9,6 +9,42 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  void _navigateToHomeScreen() {
+    Navigator.pop(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomeScreen(),
+      ),
+    );
+  }
+
+  Widget _buildListTile(
+    String title,
+    String? subtitle,
+    bool showTrailingIcon,
+  ) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontFamily: 'UbuntuCondensed',
+          fontSize: subtitle == null ? 24 : 18,
+        ),
+      ),
+      subtitle: subtitle != null
+          ? Text(
+              subtitle,
+              style: const TextStyle(
+                fontFamily: 'UbuntuCondensed',
+                fontSize: 12,
+              ),
+            )
+          : null,
+      onTap: () {},
+      trailing: showTrailingIcon ? const Icon(Icons.check) : null,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,14 +56,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Row(
                 children: [
                   InkWell(
-                    onTap: () {
-                      Navigator.pop(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                      );
-                    },
+                    onTap: _navigateToHomeScreen,
                     child: const Icon(Icons.arrow_back_ios),
                   ),
                   const Expanded(
@@ -47,138 +76,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Expanded(
                 child: ListView(
                   children: [
-                    ListTile(
-                      title: const Text(
-                        'Theme',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 24,
-                        ),
-                      ),
-                      onTap: () {},
+                    _buildListTile('Theme', null, false),
+                    _buildListTile('Dark Theme', 'Join the Dark Side!', false),
+                    _buildListTile('Light Theme', 'Let There be Light!', true),
+                    _buildListTile('Feedback', null, false),
+                    _buildListTile(
+                      'Report an Issue',
+                      'Facing an issue? Report and we’ll look into it.',
+                      false,
                     ),
-                    ListTile(
-                      title: const Text(
-                        'Dark Theme',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 18,
-                        ),
-                      ),
-                      subtitle: const Text(
-                        'Join the Dark Side!',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 12,
-                        ),
-                      ),
-                      onTap: () {},
+                    _buildListTile(
+                      'Rate on App Store',
+                      'Enjoying the app? Leave a review on the App Store.',
+                      false,
                     ),
-                    ListTile(
-                      title: const Text(
-                        'Light Theme',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 18,
-                        ),
-                      ),
-                      subtitle: const Text(
-                        'Let There be Light!',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 12,
-                        ),
-                      ),
-                      onTap: () {},
-                      trailing: const Icon(Icons.check),
-                    ),
-                    ListTile(
-                      title: const Text(
-                        'Feedback',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 24,
-                        ),
-                      ),
-                      onTap: () {},
-                    ),
-                    ListTile(
-                      title: const Text(
-                        'Report an Issue',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 18,
-                        ),
-                      ),
-                      subtitle: const Text(
-                        'Facing an issue? Report and we’ll look into it.',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 12,
-                        ),
-                      ),
-                      onTap: () {},
-                    ),
-                    ListTile(
-                      title: const Text(
-                        'Rate on App Store',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 18,
-                        ),
-                      ),
-                      subtitle: const Text(
-                        'Enjoying the app? Leave a review on the App Store.',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 12,
-                        ),
-                      ),
-                      onTap: () {},
-                    ),
-                    ListTile(
-                      title: const Text(
-                        'About',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 24,
-                        ),
-                      ),
-                      onTap: () {},
-                    ),
-                    ListTile(
-                      title: const Text(
-                        'About Weather',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 18,
-                        ),
-                      ),
-                      subtitle: const Text(
-                        'Read a bit more about the app.',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 12,
-                        ),
-                      ),
-                      onTap: () {},
-                    ),
-                    ListTile(
-                      title: const Text(
-                        'The Team',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 18,
-                        ),
-                      ),
-                      subtitle: const Text(
-                        'Get to know the team that made Weather a reality.',
-                        style: TextStyle(
-                          fontFamily: 'UbuntuCondensed',
-                          fontSize: 12,
-                        ),
-                      ),
-                      onTap: () {},
+                    _buildListTile('About', null, false),
+                    _buildListTile('About Weather',
+                        'Read a bit more about the app.', false),
+                    _buildListTile(
+                      'The Team',
+                      'Get to know the team that made Weather a reality.',
+                      false,
                     ),
                   ],
                 ),
